@@ -29,6 +29,9 @@ class ApplicationController < ActionController::Base
   end
 
   def square_root_results
+    @num = params.fetch("number").to_f
+
+    @square_root_of_num = @num ** 0.5
     render({ :template => "calculation_templates/square_root_results.html.erb"})
   end
 
