@@ -13,10 +13,30 @@ class ApplicationController < ActionController::Base
     render({ :template => "calculation_templates/square_results.html.erb" })
   end
 
+  def random_new
+    render ({ :template => "calculation_templates/random_new.html.erb"})
+  end
+
   def random_results
     @lower = params.fetch("user_min").to_f
     @upper = params.fetch("user_max").to_f
     @result = rand(@lower..@upper)
     render({ :template => "calculation_templates/random_results.html.erb"})
+  end
+
+  def blank_square_root_form
+    render({ :template => "calculation_templates/square_root_new.html.erb"})
+  end
+
+  def square_root_results
+    render({ :template => "calculation_templates/square_root_results.html.erb"})
+  end
+
+  def payment_new
+    render({ :template => "calculation_templates/payment_new.html.erb"})
+  end
+
+  def payment_results
+    render({ :template => "calculation_templates/payment_results.html.erb"})
   end
 end
